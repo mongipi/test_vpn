@@ -13,3 +13,8 @@ init:
 portainer:
 	docker volume create portainer_data
 	$(call docker_rebuild, "portainer", "docker/portainer")
+
+nginxpm:
+	docker volume create nginxpm_data
+	docker volume create nginxpm_letsencrypt
+	$(call docker_rebuild, "nginxpm", "docker/nginxpm")
